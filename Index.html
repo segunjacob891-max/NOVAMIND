@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVAMIND | Think Beyond Limits</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: #ffffff;
+}
+
+header {
+  padding: 22px 16px;
+  text-align: center;
+  background: #111a33;
+  border-bottom: 1px solid #263657;
+}
+
+header h1 {
+  color: #64a5ff;
+  margin: 0;
+  font-size: 32px;
+}
+
+header p {
+  color: #c4d2ed;
+}
+
+main {
+  max-width: 850px;
+  margin: auto;
+  padding: 24px 16px;
+}
+
+.hero {
+  text-align: center;
+  padding: 35px 12px;
+}
+
+.hero h2 {
+  font-size: 30px;
+}
+
+.hero p {
+  color: #c4d2ed;
+  line-height: 1.7;
+}
+
+.card {
+  background: #141e38;
+  border: 1px solid #2b3c60;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 18px 0;
+}
+
+button {
+  background: #4388ff;
+  color: white;
+  border: none;
+  border-radius: 9px;
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2868d8;
+}
+
+textarea {
+  width: 100%;
+  min-height: 110px;
+  padding: 12px;
+  border-radius: 9px;
+  border: 1px solid #435779;
+  background: #0b1020;
+  color: white;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+#result {
+  white-space: pre-wrap;
+  line-height: 1.6;
+  color: #a9caff;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 12px;
+  color: #91a3c5;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NOVAMIND</h1>
+    <p>Think Beyond Limits.</p>
+  </header>  <main>
+    <section class="hero">
+      <h2>Welcome to NOVAMIND 🚀</h2>
+      <p>
+        A space for ideas, creativity, learning and problem-solving.
+        Discover new possibilities and turn your ideas into action.
+      </p>
+    </section><section class="card">
+  <h2>💡 Idea Generator</h2>
+  <p>Need inspiration? Generate an idea to get started.</p>
+  <button onclick="generateIdea()">Generate an Idea</button>
+  <p id="idea"></p>
+</section>
+
+<section class="card">
+  <h2>🧠 Think & Create</h2>
+  <p>Write down a problem you want to solve.</p>
+  <textarea id="problem" placeholder="Describe your idea or problem here..."></textarea>
+  <button onclick="showPlan()">Create a Starter Plan</button>
+  <p id="result"></p>
+</section>
+
+<section class="card">
+  <h2>🌍 Our Mission</h2>
+  <p>
+    NOVAMIND aims to help people explore ideas, learn useful skills
+    and develop creative solutions to everyday problems.
+  </p>
+</section>
+
+  </main>  <footer>
+    <p>© 2026 NOVAMIND. Built for creative minds.</p>
+  </footer>  <script>
+    const ideas = [
+      "Create a study group where students help each other learn.",
+      "Build a community that shares solutions to everyday problems.",
+      "Design a simple tool that helps people organize their daily tasks.",
+      "Create educational content that makes difficult topics easier.",
+      "Develop a platform where people can share and improve ideas."
+    ];
+
+    function generateIdea() {
+      const random = Math.floor(Math.random() * ideas.length);
+      document.getElementById("idea").textContent = ideas[random];
+    }
+
+    function showPlan() {
+      const problem = document.getElementById("problem").value.trim();
+      const result = document.getElementById("result");
+
+      if (!problem) {
+        result.textContent = "Please describe your idea or problem first.";
+        return;
+      }
+
+      result.textContent =
+        "Your starter plan:\\n\\n" +
+        "1. Define the problem: " + problem + "\\n" +
+        "2. Identify who needs the solution.\\n" +
+        "3. Brainstorm three possible solutions.\\n" +
+        "4. Choose one simple solution to test.\\n" +
+        "5. Collect feedback and improve your idea.\\n\\n" +
+        "Keep learning and take it one step at a time!";
+    }
+  </script></body>
+</html>
